@@ -1,0 +1,18 @@
+# Azure DevOps pipeline: build the schema in a throwaway Oracle database and
+# run the PL/SQL test suite on every push and pull request.
+trigger:
+  branches:
+    include: [ main ]
+pr:
+  branches:
+    include: [ main ]
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: self
+  - script: chmod +x scripts/run_local.sh && ./scripts/run_local.sh
+    displayName: Install schema + PL/SQL and run tests on Oracle Database Free
+    env:
+      APP_USER_PASSWORD: $(APP_USER_PASSWORD)   # define as a secret pipeline variable
