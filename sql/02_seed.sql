@@ -1,10 +1,14 @@
 -- Seed data: every row is fictional and exists to exercise a specific rule.
 
 -- GL accounts  (fund . agency/cost center . natural account)
-INSERT INTO gl_code_combinations VALUES (1, '100', '15100', '101000', 'A', 'Y'); -- Cash
-INSERT INTO gl_code_combinations VALUES (2, '100', '15100', '201000', 'L', 'Y'); -- AP Liability
-INSERT INTO gl_code_combinations VALUES (3, '100', '15100', '521000', 'E', 'Y'); -- Office Supplies
-INSERT INTO gl_code_combinations VALUES (4, '100', '15100', '522000', 'E', 'Y'); -- IT Services
+-- Cash
+INSERT INTO gl_code_combinations VALUES (1, '100', '15100', '101000', 'A', 'Y');
+-- AP Liability
+INSERT INTO gl_code_combinations VALUES (2, '100', '15100', '201000', 'L', 'Y');
+-- Office Supplies
+INSERT INTO gl_code_combinations VALUES (3, '100', '15100', '521000', 'E', 'Y');
+-- IT Services
+INSERT INTO gl_code_combinations VALUES (4, '100', '15100', '522000', 'E', 'Y');
 
 -- Suppliers
 INSERT INTO ap_suppliers VALUES (1001, 'Acme Office Supply',       'Y');
