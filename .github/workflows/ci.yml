@@ -1,0 +1,13 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  plsql-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install schema + PL/SQL and run tests on Oracle Database Free
+        run: chmod +x scripts/run_local.sh && ./scripts/run_local.sh
